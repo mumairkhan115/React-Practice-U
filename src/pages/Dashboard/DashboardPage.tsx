@@ -5,7 +5,7 @@ function DashboardPage() {
   const navigate = useNavigate();
 
   return (
-    <Card title="Dashboard">
+    <Card>
       <h2>Welcome to your dashboard!</h2>
       <Button type="primary" onClick={() => navigate('/practice')}>
         Go to Practice

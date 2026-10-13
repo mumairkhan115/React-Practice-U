@@ -1,0 +1,597 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700&display=swap');
+
+@font-face {
+  font-family: "icomoon";
+  // Relative path so Vite's asset pipeline resolves and hashes it
+  src: url("../fonts/icomoon.eot");
+  src: url("../fonts/icomoon.eot?q3rxnt#iefix") format("embedded-opentype"),
+    url("../fonts/icomoon.ttf?q3rxnt") format("truetype"),
+    url("../fonts/icomoon.woff?q3rxnt") format("woff"),
+    url("../fonts/icomoon.svg?q3rxnt#icomoon") format("svg");
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="icon-"],
+[class*=" icon-"],
+[class^="icon-"]::before,
+[class*=" icon-"]::before {
+  font-family: "icomoon" !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-infoi-circle:before {
+  content: "\e9b5";
+}
+.icon-tick-thin:before {
+  content: "\e9b6";
+}
+.icon-tick-thick:before {
+  content: "\e9b4";
+}
+
+.icon-semen-codes:before {
+  content: "\e9b3";
+}
+.icon-injection:before {
+  content: "\e9b1";
+}
+.icon-company-single:before {
+  content: "\e9af";
+}
+.icon-embryo:before {
+  content: "\e9b0";
+}
+.icon-injection:before {
+  content: "\e9b1";
+}
+.icon-microscope:before {
+  content: "\e9b2";
+}
+.icon-chevron-down:before {
+  content: "\e9ae";
+}
+.icon-chart-pie:before {
+  content: "\e9ac";
+}
+.icon-grip-dots-vertical:before {
+  content: "\e9ad";
+}
+.icon-hutch:before {
+  content: "\e9a9";
+}
+.icon-pen-lot:before {
+  content: "\e9aa";
+}
+.icon-pasture-lot:before {
+  content: "\e9ab";
+}
+.icon-building:before {
+  content: "\e9a8";
+}
+.icon-gender-ico:before {
+  content: "\e9a6";
+}
+.icon-clock-rotate-left:before {
+  content: "\e974";
+}
+.icon-comment:before {
+  content: "\e975";
+}
+.icon-milking1:before {
+  content: "\e973";
+}
+.icon-list-check:before {
+  content: "\e9a5";
+}
+.icon-warehouse-full:before {
+  content: "\e9a4";
+}
+.icon-cattlytics-ai-icon:before {
+  content: "\e9a3";
+}
+.icon-HQ:before {
+  content: "\e900";
+}
+.icon-activity-log:before {
+  content: "\e934";
+}
+.icon-age-ico:before {
+  content: "\e97d";
+}
+.icon-alarm-clock:before {
+  content: "\e99f";
+}
+.icon-android:before {
+  content: "\e98c";
+}
+.icon-animal-head-up:before {
+  content: "\e96d";
+}
+.icon-animals:before {
+  content: "\e901";
+}
+.icon-animals-dual-dash:before {
+  content: "\e990";
+}
+.icon-apple:before {
+  content: "\e98b";
+}
+.icon-apple-filled:before {
+  content: "\e971";
+}
+.icon-arrow-back:before {
+  content: "\e93b";
+}
+.icon-bag-seedling:before {
+  content: "\e984";
+}
+.icon-breeding-sound:before {
+  content: "\e97e";
+}
+.icon-calendar:before {
+  content: "\e902";
+}
+.icon-calendar-week:before {
+  content: "\e998";
+}
+.icon-calender-snooze:before {
+  content: "\e99e";
+}
+.icon-camel:before {
+  content: "\e903";
+}
+.icon-cancel-ico:before {
+  content: "\e966";
+}
+.icon-capsules:before {
+  content: "\e985";
+}
+.icon-categories:before {
+  content: "\e904";
+}
+.icon-cattle:before {
+  content: "\e905";
+}
+.icon-chart-area:before {
+  content: "\e97b";
+}
+.icon-chevron-left:before {
+  content: "\e970";
+}
+.icon-chevron-right:before {
+  content: "\e981";
+}
+.icon-chicken:before {
+  content: "\e906";
+}
+.icon-clipboard-check:before {
+  content: "\e930";
+}
+.icon-close:before {
+  content: "\e907";
+}
+.icon-code:before {
+  content: "\e908";
+}
+.icon-collapse:before {
+  content: "\e929";
+}
+.icon-coma-end:before {
+  content: "\e995";
+}
+.icon-coma-std:before {
+  content: "\e994";
+}
+.icon-companies:before {
+  content: "\e909";
+}
+.icon-copy:before {
+  content: "\e90a";
+}
+.icon-countries:before {
+  content: "\e90b";
+}
+.icon-cow-head-dual:before {
+  content: "\e917";
+}
+.icon-ct-calender-ico:before {
+  content: "\e925";
+}
+.icon-ct-filter-ico:before {
+  content: "\e913";
+}
+.icon-ct-label-ico:before {
+  content: "\e916";
+}
+.icon-ct-listing-ico:before {
+  content: "\e915";
+}
+.icon-dashboard:before {
+  content: "\e90c";
+}
+.icon-dead-animal:before {
+  content: "\e96e";
+}
+.icon-dead-animal-dash:before {
+  content: "\e98f";
+}
+.icon-delete:before {
+  content: "\e90d";
+}
+.icon-disease:before {
+  content: "\e90e";
+}
+.icon-dollar-note:before {
+  content: "\e977";
+}
+.icon-dollar-note-up:before {
+  content: "\e979";
+}
+.icon-dot:before {
+  content: "\e93a";
+}
+.icon-down:before {
+  content: "\e90f";
+}
+.icon-download:before {
+  content: "\e935";
+}
+.icon-drag:before {
+  content: "\e996";
+}
+.icon-draw-polygon:before {
+  content: "\e989";
+}
+.icon-drop-down-fill:before {
+  content: "\e955";
+}
+.icon-dual-head-sm:before {
+  content: "\e98d";
+}
+.icon-edit:before {
+  content: "\e910";
+}
+.icon-edit-outline:before {
+  content: "\e931";
+}
+.icon-equine:before {
+  content: "\e918";
+}
+.icon-exclaim-circle:before {
+  content: "\e969";
+}
+.icon-expand:before {
+  content: "\e92a";
+}
+.icon-eye:before {
+  content: "\e932";
+}
+.icon-eye-closed:before {
+  content: "\e911";
+}
+.icon-eye-open:before {
+  content: "\e912";
+}
+.icon-farm:before {
+  content: "\e98e";
+}
+.icon-feeding-ico:before {
+  content: "\e95f";
+}
+.icon-file-excel:before {
+  content: "\e988";
+}
+.icon-file-pdf:before {
+  content: "\e987";
+}
+.icon-filter-arrow:before {
+  content: "\e92b";
+}
+.icon-filter-selected-arrow:before {
+  content: "\e92c";
+}
+.icon-gear:before {
+  content: "\e99c";
+}
+.icon-globe-everyone:before {
+  content: "\e937";
+}
+.icon-globe-everyone-edit:before {
+  content: "\e938";
+}
+.icon-globe-private:before {
+  content: "\e939";
+}
+.icon-goat:before {
+  content: "\e914";
+}
+.icon-google-colored .path1:before {
+  content: "\e972";
+  // color: rgb(255, 193, 7);
+}
+.icon-google-colored .path2:before {
+  content: "\e973";
+  margin-left: -1em;
+  color: rgb(255, 61, 0);
+}
+.icon-google-colored .path3:before {
+  content: "\e974";
+  margin-left: -1em;
+  color: rgb(76, 175, 80);
+}
+.icon-google-colored .path4:before {
+  content: "\e975";
+  margin-left: -1em;
+  color: rgb(25, 118, 210);
+}
+.icon-grid:before {
+  content: "\e98a";
+}
+.icon-gs-bell:before {
+  content: "\e924";
+}
+.icon-gs-chat:before {
+  content: "\e946";
+}
+.icon-gs-clipboard:before {
+  content: "\e93e";
+}
+.icon-gs-cow-head:before {
+  content: "\e947";
+}
+.icon-gs-cow-head-revised1:before {
+  content: "\e958";
+}
+.icon-gs-cow-head-varity-01:before {
+  content: "\e92f";
+}
+.icon-gs-cow-head-varity-02:before {
+  content: "\e959";
+}
+.icon-gs-cow-head-varity-03:before {
+  content: "\e95a";
+}
+.icon-gs-cow-head-varity-dash:before {
+  content: "\e991";
+}
+.icon-gs-cross-circle:before {
+  content: "\e93f";
+}
+.icon-gs-delete:before {
+  content: "\e956";
+}
+.icon-gs-edit:before {
+  content: "\e95b";
+}
+.icon-gs-fence:before {
+  content: "\e948";
+}
+.icon-gs-fence-new:before {
+  content: "\e954";
+}
+.icon-gs-flag:before {
+  content: "\e94e";
+}
+.icon-gs-health:before {
+  content: "\e940";
+}
+.icon-gs-history:before {
+  content: "\e95c";
+}
+.icon-gs-location:before {
+  content: "\e941";
+}
+.icon-gs-location-pin:before {
+  content: "\e945";
+}
+.icon-gs-logout:before {
+  content: "\e949";
+}
+.icon-gs-map-marker:before {
+  content: "\e942";
+}
+.icon-gs-map-marker-solid:before {
+  content: "\e943";
+}
+.icon-gs-question-circle:before {
+  content: "\e94b";
+}
+.icon-gs-sort:before {
+  content: "\e944";
+}
+.icon-gs-tag:before {
+  content: "\e94d";
+}
+.icon-gs-tick-circle:before {
+  content: "\e94c";
+}
+.icon-gs-trials:before {
+  content: "\e94a";
+}
+.icon-hospital-circle-ico:before {
+  content: "\e952";
+}
+.icon-icon-gs-upload:before {
+  content: "\e953";
+}
+.icon-icon-tag-circle-filled:before {
+  content: "\e97c";
+}
+.icon-inprogress:before {
+  content: "\e92d";
+}
+.icon-key:before {
+  content: "\e986";
+}
+.icon-knife-cut-ico:before {
+  content: "\e962";
+}
+.icon-lab:before {
+  content: "\e919";
+}
+.icon-label-dual-ico:before {
+  content: "\e963";
+}
+.icon-left:before {
+  content: "\e91a";
+}
+.icon-location-circle-ico:before {
+  content: "\e951";
+}
+.icon-lock:before {
+  content: "\e933";
+}
+.icon-mail:before {
+  content: "\e91b";
+}
+.icon-marking-circle-ico:before {
+  content: "\e950";
+}
+.icon-milking:before {
+  content: "\e99a";
+}
+.icon-milking-eval:before {
+  content: "\e99b";
+}
+.icon-minus:before {
+  content: "\e91c";
+}
+.icon-money-check-dollar:before {
+  content: "\e978";
+}
+.icon-observation-ico:before {
+  content: "\e99d";
+}
+.icon-play:before {
+  content: "\e9a2";
+}
+.icon-plus:before {
+  content: "\e91d";
+}
+.icon-pregnant-cows:before {
+  content: "\e982";
+}
+.icon-products:before {
+  content: "\e91e";
+}
+.icon-promo-cow-ico:before {
+  content: "\e95d";
+}
+.icon-promote-cow:before {
+  content: "\e96c";
+}
+.icon-ranch-ico:before {
+  content: "\e976";
+}
+.icon-record-heat:before {
+  content: "\e980";
+}
+.icon-reference-animal:before {
+  content: "\e983";
+}
+.icon-replacement-heifer:before {
+  content: "\e9a0";
+}
+.icon-report-ico:before {
+  content: "\e96f";
+}
+.icon-report-ico-ct:before {
+  content: "\e96b";
+}
+.icon-right:before {
+  content: "\e91f";
+}
+.icon-save:before {
+  content: "\e92e";
+}
+.icon-save-file-ico:before {
+  content: "\e965";
+}
+.icon-screwdriver-wrench:before {
+  content: "\e97a";
+}
+.icon-search:before {
+  content: "\e920";
+}
+.icon-semen-collection:before {
+  content: "\e97f";
+}
+.icon-sheep:before {
+  content: "\e921";
+}
+.icon-sort-desc-ico:before {
+  content: "\e967";
+}
+.icon-sort_Icon:before {
+  content: "\e957";
+}
+.icon-star-empty:before {
+  content: "\e992";
+}
+.icon-star-fill:before {
+  content: "\e993";
+}
+.icon-steer:before {
+  content: "\e9a1";
+}
+.icon-subcategory:before {
+  content: "\e922";
+}
+.icon-subscribe-ico:before {
+  content: "\e96a";
+}
+.icon-swine:before {
+  content: "\e923";
+}
+.icon-switch:before {
+  content: "\e936";
+}
+.icon-tag-circle-ico:before {
+  content: "\e94f";
+}
+.icon-tick:before {
+  content: "\e926";
+}
+.icon-tick-hollow:before {
+  content: "\e968";
+}
+.icon-time:before {
+  content: "\e927";
+}
+.icon-torch-ico:before {
+  content: "\e95e";
+}
+.icon-up:before {
+  content: "\e928";
+}
+.icon-user:before {
+  content: "\e93c";
+}
+.icon-users:before {
+  content: "\e93d";
+}
+.icon-weaning-ico:before {
+  content: "\e961";
+}
+.icon-weight-measure-ico:before {
+  content: "\e964";
+}
+.icon-weight-scale:before {
+  content: "\e997";
+}
+.icon-wheat:before {
+  content: "\e999";
+}
+.icon-yearling-ico:before {
+  content: "\e960";
+}

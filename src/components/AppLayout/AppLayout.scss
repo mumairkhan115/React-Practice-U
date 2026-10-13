@@ -1,0 +1,365 @@
+@use "../../assets/sass/variables" as *;
+
+// Navbar
+
+.aside-menu{
+    border-right: rem(1) solid $card-border;
+    border-top: rem(1) solid $card-border;
+}
+
+.ant-layout-header {
+    background: $white;
+    box-shadow: 0px 1px 0px $white-100;
+    padding: 0 rem(24);
+    z-index: 5;
+}
+
+header{
+    &.logo {
+        .mobile-menu-trigger{
+            margin-left: rem(-14);
+        }
+        svg{
+            fill: $color-primary;
+        }
+        img {
+            max-width: 100%;
+            height: rem(32);
+        }
+    }
+}
+
+.userProfileDp {
+    align-self: center;
+}
+
+.profile-dd-menu {
+    .ant-dropdown-menu-item {
+        .icon-user{
+            font-size: rem(16);
+        }
+    }
+}
+
+.userProfile {
+    line-height: normal;
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+
+    .icon-down {
+        font-size: rem(20);
+        color: $black-1000;
+
+        @media screen and (max-width: 575.98px) {
+            font-size: rem(16);
+        }
+    }
+}
+
+// Mobile menu trigger — hidden by default, only shown at/below the sidebar's
+// mobile breakpoint (see .ant-layout-sider below).
+.mobile-menu-trigger {
+    display: none;
+
+    @media (max-width: 820px) {
+        display: inline-flex;
+    }
+}
+
+// Sidebar
+
+// Below this width the sidebar is hidden entirely; the hamburger button
+// (.mobile-menu-trigger, in Navbar.tsx) toggles it open as an overlay via the
+// "mobile-sidebar-open" class (see AppLayout.tsx), instead of it pushing content.
+@media (max-width: 820px) {
+    .ant-layout-has-sider {
+        position: relative;
+    }
+
+    .ant-layout-sider {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        z-index: 101;
+        transform: translateX(-100%);
+        transition: transform 0.35s ease;
+        // Off-canvas sider must not keep intercepting taps on the page beneath.
+        pointer-events: none;
+
+        &.mobile-sidebar-open {
+            transform: translateX(0);
+            pointer-events: auto;
+        }
+    }
+
+    // The sider never pushes #app-content at this width, so SelectionFooter's
+    // inline `left` offset (SIDER_WIDTH/SIDER_COLLAPSED_WIDTH) must be pinned
+    // back to the content's real, unpushed edge.
+    #app-content .selection-footer {
+        left: 0 !important;
+    }
+}
+
+// Sits under the sider (z-index 101) so a tap outside the drawer dismisses it.
+// Hidden above the mobile breakpoint so a leftover mobileOpen flag after resize
+// cannot cover the desktop layout.
+.mobile-sidebar-backdrop {
+    display: none;
+
+    @media (max-width: 820px) {
+        display: block;
+        position: absolute;
+        inset: 0;
+        z-index: 100;
+        margin: 0;
+        padding: 0;
+        border: 0;
+        background: transparent;
+        cursor: pointer;
+    }
+}
+
+.ant-menu-inline {
+    border-right: 0;
+}
+
+// The Flex wrapping the nav Menu is a row-direction flex container; without
+// this, the Menu (a flex item) defaults to min-width:auto and won't shrink
+// below its uncollapsed label width, overflowing the collapsed 80px sider.
+.sidebar-nav-flex {
+    min-width: 0;
+
+    > * {
+        min-width: 0;
+    }
+}
+
+.ant-menu-root{
+    .ant-menu-submenu{
+        min-height: rem(54);
+        margin-top: rem(5);
+        border-left: rem(5) solid transparent;
+        &:hover,
+        &.ant-menu-submenu-selected{
+            border-color: $color-primary;
+            .ant-menu-submenu-title{
+                color: $color-primary;
+            }
+        }
+        // A selected child (e.g. Tanks) marks its parent as active too.
+        &.ant-menu-submenu-selected > .ant-menu-submenu-title{
+            background-color: $white-1000;
+        }
+        .ant-menu-submenu-title{
+            min-height: rem(54);
+            display: flex;
+        }
+        .icon-warehouse-full{
+            &:before{
+                font-size: rem(19);
+                margin-left: rem(-3);
+                margin-top: rem(-3);
+            }
+        }
+    }
+}
+
+// Submenu children (Inventory → Tanks/Semen/Embryos): no icon, no tinted
+// background or accent border; the selected child is marked by text weight only.
+.ant-menu-root.ant-menu-inline .ant-menu-submenu > .ant-menu-sub.ant-menu-inline {
+    background: transparent;
+
+    > .ant-menu-item {
+        // Lines the label up with the parent's label (indent + icon + gap);
+        // !important beats antd's inline padding-inline-start.
+        padding-inline-start: rem(43) !important;
+        border-color: transparent;
+        margin: 0;
+
+        &:hover,
+        &:active,
+        &.ant-menu-item-selected {
+            background-color: transparent;
+            border-color: transparent;
+        }
+
+        &.ant-menu-item-selected {
+            color: $black-900;
+            font-weight: 500;
+        }
+    }
+}
+
+.ant-menu-root .ant-menu-item {
+    min-height: rem(54);
+    margin-top: rem(8);
+    margin-left: 0;
+    margin-right: 0;
+    border-radius: 0;
+    width: 100%;
+    display: flex;
+    &.ant-menu-item-disabled{
+        border-color: transparent;
+    }
+    i{
+        &.ant-menu-item-icon{
+            color: inherit;
+            &:before{
+                color: inherit;
+            }
+        }
+    }
+    .icon-feeding-ico{
+        &:before{
+            font-size: 1.8rem;
+            top: rem(-2);
+            left: rem(-3);
+            position: relative;
+        }
+    }
+    .icon-microscope{
+        &:before{
+            font-size: rem(24);
+        }
+    }
+    .icon-semen-codes{
+        &:before{
+            font-size: rem(22);
+            margin-left: rem(2);
+            margin-top: rem(-4);
+        }
+    }
+    .icon-company-single{
+        &:before{
+            font-size: rem(21);
+        }
+    }
+    .icon-gs-fence{
+        &:before{
+            font-size: rem(20);
+        }
+    }
+    .icon-grid{
+        &:before{
+            font-size: rem(19);
+        }
+    }
+    .icon-embryo{
+        &:before{
+            font-size: rem(23);
+        }
+    }
+    .icon-cow-head-dual{
+        &:before{
+            font-size: rem(23);
+            position: relative;
+            left: rem(-5);
+        }
+    }
+    .icon-report-ico{
+        &:before{
+            font-size: rem(26);
+        }
+    }
+    .icon-user{
+        &:before{
+            font-size: rem(25);
+        }
+    }
+}
+
+.ant-menu .ant-menu-item .ant-menu-item-icon + .ant-menu-title-content,
+.ant-menu .ant-menu-submenu-title .ant-menu-item-icon + .ant-menu-title-content {
+    margin-inline-start: rem(5);
+}
+
+.ant-menu.ant-menu-inline-collapsed > .ant-menu-item .ant-menu-item-icon + .ant-menu-title-content {
+    vertical-align: top;
+    line-height: rem(55);
+}
+
+.ant-menu .ant-menu-item .ant-menu-item-icon,
+.ant-menu .ant-menu-submenu-title .ant-menu-item-icon,
+.ant-menu.ant-menu-inline-collapsed > .ant-menu-item .ant-menu-item-icon {
+    font-size: rem(22);
+    line-height: rem(55);
+    min-width: rem(30);
+    text-align: center;
+}
+
+.ant-menu.ant-menu-inline-collapsed > .ant-menu-item {
+    padding: 0 calc(50% - 32px / 2);
+}
+
+.ant-menu:not(.ant-menu-horizontal) .ant-menu-item-selected {
+    border-color: $color-primary;
+}
+
+.ant-menu-item {
+    border-left: rem(5) solid;
+    border-color: transparent;
+
+    &:hover,
+    &:active,
+    a:hover {
+        background-color: $white-1000;
+    }
+
+    &:hover {
+        border-color: $color-primary;
+
+        .ant-menu-item-icon,
+        .ant-menu-item-icon i {
+            // color: $color-primary;
+            color: inherit;
+        }
+    }
+}
+
+.ant-menu-inline .ant-menu-item::after {
+    content: none;
+}
+
+.sidebar-trigger-btn{
+    border: 0;
+    border-radius: 0;
+    border-top: rem(1) solid $card-border;
+    color: $black-700;
+    font-size: rem(12);
+    justify-content: left;
+
+    &:hover, &:active, &:focus {
+        border-color: $card-border;
+        background: $white;
+    }
+}
+
+.powered-by {
+    border: rem(1) solid $card-border;
+    border-radius: rem(12);
+    
+    color: $black-700;
+
+    .ant-typography {
+        font-size: rem(12);
+    }
+    .ant-image {
+        text-align: left;
+    }
+}
+
+.delay-visible {
+  animation: fadeIn 0.4s ease-in 0.3s both;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}

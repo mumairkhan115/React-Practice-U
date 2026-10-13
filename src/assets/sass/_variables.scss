@@ -1,0 +1,112 @@
+// Here you can add other styles
+@use "sass:math";
+
+$html-font-size: 16px;
+
+@function stripUnit($value) {
+  @return math.div($value, $value * 0 + 1);
+}
+
+@function rem($pxValue) {
+  @return #{math.div(stripUnit($pxValue), stripUnit($html-font-size))}rem;
+}
+
+// _color_variables
+$white: #ffffff;
+$black: #000000;
+
+$black-100: #e3e5e8;
+$black-1000: #1a1a1a;
+$black-900: #1b1c1e;
+$black-800: #3b3c3f;
+$black-700: #5a5b5d;
+$black-600: #6e6f71;
+$black-500: #2e2c2d;
+$black-400: #1d252d;
+$black-1100: #515558;
+$color-red: #ef2424;
+$color-danger-red: #f5222d;
+$color-red-error: #ff4d4f;
+$success-green: #3c763d;
+$failed-red: #a94442;
+$refer-color: #4287ff;
+$sold-color: #ef7424;
+$status-inprogress: #f49924;
+$active-color: #34c188;
+
+$grey-900: #9D9D9D;
+$grey-400: #465668;
+$grey-500: #595959;
+
+$white-100: #e9eaed;
+$white-200: #f9faff;
+$white-300: #d9dadd;
+$white-400: #F0F5FA;
+$white-500: #d0d0d0;
+$white-600: #dde5ed;
+$white-700: #fef1f1;
+$white-800: #f5f7fb;
+$white-900: #f5f5f5;
+$white-1000: #eff4fa;
+$white-1100: #96979a;
+$white-1200: #f3f3f3;
+$white-1300: #eafbf3;
+$info-blue: #a7c7e7;
+$info-purple: #e7e4f6;
+$info-beige: #f5eee0;
+$info-blue-notify: #91d5ff;
+$breeze: #ccf5e2;
+$disabled-border: #d9d9d9;
+$disabled-bg: #f5f5f5;
+$card-bg: #f2f3f6;
+$card-border: #eaebf2;
+$icon-bg: #b6b7b9;
+$scroll-track: #e5e4e2;
+$scroll-thumb: #a9a9a9;
+$note-border: #d1fce7;
+$dnd-border: #b6b7b9;
+$tag-bg: #eeeded;
+$title-modal: #282828;
+$badge-orange: #f2a02f;
+$pending-color: #f4b133;
+$color-primary-light: #e5f4ec;
+$color-secondary-light: #fef7e3;
+$revamp-blue: #2e4755;
+$color-red-light: #fff1f0;
+$body-bg-2: #a7abbe;
+$system-task-color: #4474f7;
+$info-green: #f5faef;
+$info-pink: #faf0ef;
+$info-rain: #e4f3ff;
+$selected-bg: #F3F7FB;
+
+$color-primary: #1F9A63;
+$color-head-primary: #3B3C3F;
+$color-btn-primary: #1B1C1E;
+$color-links-primary: #47A86F;
+$color-primary-100: #C1E4D1;
+$color-secondary: #F8F9FC;
+$color-secondary-500: #F5BE38; 
+$color-secondary-600: #F4B133;
+$color-secondary-800: #F1902C;
+$color-secondary-900: #EF7424;
+
+$divider-color: #DBDCE1;
+$file-upload-card-border-color: #B6B7B9;
+$file-upload-card-bg: #F7FAFD;
+
+$accordion-toggle-all-bg: #E8EFF8;
+
+$color-new-label: $color-primary;
+$yearly-card-theme: linear-gradient(180deg, #1D4533 -4.88%, #101915 103.56%);
+
+$step-tail-color: #C7CED8;
+
+//Transition
+
+@mixin transition($transition) {
+  -moz-transition: all ease $transition;
+  -o-transition: all ease $transition;
+  -webkit-transition: all ease $transition;
+  transition: all ease $transition;
+}

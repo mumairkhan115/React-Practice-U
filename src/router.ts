@@ -4,15 +4,24 @@ export const router = createBrowserRouter([
   {
     path: '/',
     lazy: async () => {
-      const { default: DashboardPage } = await import('./pages/Dashboard/DashboardPage');
-      return { Component: DashboardPage };
+      const { default: AppLayout } = await import('./components/AppLayout/AppLayout');
+      return { Component: AppLayout };
     },
-  },
-  {
-    path: '/practice',
-    lazy: async () => {
-      const { default: PracticePage } = await import('./pages/Practice/PracticePage');
-      return { Component: PracticePage };
-    },
+    children: [
+      {
+        index: true,
+        lazy: async () => {
+          const { default: DashboardPage } = await import('./pages/Dashboard/DashboardPage');
+          return { Component: DashboardPage };
+        },
+      },
+      {
+        path: 'practice',
+        lazy: async () => {
+          const { default: PracticePage } = await import('./pages/Practice/PracticePage');
+          return { Component: PracticePage };
+        },
+      },
+    ],
   },
 ]);
